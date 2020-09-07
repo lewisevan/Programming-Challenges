@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e934a42b-936f-40aa-a477-50f9592a9c45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Demo_Submission.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Skina_Revilla/Chapter_1/Problem_100.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programming Challenges - Skiena &amp; Revilla/Chapter 1/100.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Skina_Revilla/Chapter_1/Problem_100.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Skiena_Revilla/Chapter_1/Problem_100.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,22 +76,22 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="606" y="417" width="467" height="225" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1680.1050@0.0.1680.1050" timestamp="1599506679763" />
-    <state width="1680" height="302" key="GridCell.Tab.0.bottom" timestamp="1599506929362">
+    <state width="1680" height="302" key="GridCell.Tab.0.bottom" timestamp="1599507137354">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="302" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1599506929362" />
-    <state width="1680" height="302" key="GridCell.Tab.0.center" timestamp="1599506929361">
+    <state width="1680" height="302" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1599507137354" />
+    <state width="1680" height="302" key="GridCell.Tab.0.center" timestamp="1599507137351">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="302" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1599506929361" />
-    <state width="1680" height="302" key="GridCell.Tab.0.left" timestamp="1599506929360">
+    <state width="1680" height="302" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1599507137351" />
+    <state width="1680" height="302" key="GridCell.Tab.0.left" timestamp="1599507137332">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="302" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1599506929360" />
-    <state width="1680" height="302" key="GridCell.Tab.0.right" timestamp="1599506929361">
+    <state width="1680" height="302" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1599507137332" />
+    <state width="1680" height="302" key="GridCell.Tab.0.right" timestamp="1599507137354">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state width="1680" height="302" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1599506929361" />
+    <state width="1680" height="302" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1599507137354" />
     <state x="217" y="147" key="new project wizard" timestamp="1599506418070">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

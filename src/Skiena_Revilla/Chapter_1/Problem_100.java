@@ -1,4 +1,4 @@
-package Skina_Revilla.Chapter_1;
+package Skiena_Revilla.Chapter_1;
 
 
 /*
