@@ -17,7 +17,6 @@ public class Problem_10189 {
 
         ArrayList<char[][]> grids = new ArrayList<>(); // A list of all grids
 
-        while (in.hasNextLine()) {
         /* Get and process input */
         while (in.hasNextInt()) {
             int rows = in.nextInt();
