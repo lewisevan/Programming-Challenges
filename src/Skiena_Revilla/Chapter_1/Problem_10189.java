@@ -15,24 +15,57 @@ public class Problem_10189 {
     public static void main(String[] args) {
         Scanner in = new Scanner(new BufferedInputStream(System.in));
 
-        ArrayList<char[][]> grids = new ArrayList<>();
+        ArrayList<char[][]> grids = new ArrayList<>(); // A list of all grids
 
         while (in.hasNextLine()) {
-            // Get the size of the grid
-            // If grid is not 0 x 0:
-            // Create empty r x c array of characters
-            // Get the next r lines of data, for each line store each item in a separate cell in a 2D array
-            // Add the array to the ArrayList of grids
+        /* Get and process input */
+        while (in.hasNextInt()) {
+            int rows = in.nextInt();
+            int cols = in.nextInt();
+            in.nextLine(); // Collect empty carriage return
 
-            // Process the the next grid
+            // Stop input if size is 0 x 0
+            if (rows == 0 && cols == 0) {
+                break;
+            }
+
+            // Create an empty grid
+            char[][] grid = new char[rows][cols];
+
+            // Get r rows of input. For each input row, fill corresponding row in grid
+            for (int r = 0; r < rows; r++) {
+                String line = in.nextLine();
+                for (int c = 0; c < cols; c++) {
+                    grid[r][c] = line.charAt(c);
+                }
+            }
+
+            grids.add(grid);
         }
 
-        // OUTPUT
-        /* For each grid in the ArrayList of grids:
-         *   For each row in the grid:
-         *     For each item in the row:
-         *       Count the number of adjacent mines and print it out
-         */
+        /* Process the output */
+        for (int i = 0; i < grids.size(); i++) {
+            char[][] grid = grids.get(i);
+
+            System.out.println("Field #" + (i + 1) + ":");
+
+            for (int row = 0; row < grid.length; row ++) {
+                for (int col = 0; col < grid[row].length; col++) {
+                    if (grid[row][col] == '*') {
+                        // If cell is a mine, print the mine symbol
+                        System.out.print("*");
+                    } else {
+                        // Print the number of adjacent mines
+                        int count = countAdjacentMines(grid, row, col);
+                        System.out.print(count);
+                    }
+                }
+                System.out.println("");
+            }
+            if (i < grids.size() - 1) {
+                System.out.println("");
+            }
+        }
     }
 
     /**
@@ -41,8 +74,43 @@ public class Problem_10189 {
      * @param col the column of the cell
      * @return the number of adjacent mines
      */
-    public static int countAdjacentMines(int row, int col) {
+    public static int countAdjacentMines(char[][] grid, int row, int col) {
         // Check the surrounding cells for mines
-        return 0;
+        int count = 0;
+
+        // Check above cell
+        if (row > 0) {
+            count += grid[row-1][col] == '*' ? 1 : 0;
+        }
+        // Check above-left cell
+        if (row > 0 && col > 0) {
+            count += grid[row-1][col-1] == '*' ? 1 : 0;
+        }
+        // Check above-right cell
+        if (row > 0 && col < grid[row].length - 1) {
+            count += grid[row-1][col+1] == '*' ? 1 : 0;
+        }
+        // Check left cell
+        if (col > 0) {
+            count += grid[row][col-1] == '*' ? 1 : 0;
+        }
+        // Check left cell
+        if (col < grid[row].length - 1) {
+            count += grid[row][col+1] == '*' ? 1 : 0;
+        }
+        // Check below cell
+        if (row < grid.length - 1) {
+            count += grid[row+1][col] == '*' ? 1 : 0;
+        }
+        // Check row below-left cell
+        if (row < grid.length - 1 && col > 0) {
+            count += grid[row+1][col-1] == '*' ? 1 : 0;
+        }
+        // Check row below-right cell
+        if (row < grid.length - 1 && col < grid[row].length - 1) {
+            count += grid[row+1][col+1] == '*' ? 1 : 0;
+        }
+
+        return count;
     }
 }
