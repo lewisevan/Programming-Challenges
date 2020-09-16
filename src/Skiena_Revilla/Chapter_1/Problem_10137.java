@@ -17,17 +17,30 @@ public class Problem_10137 {
                 payments[i] = in.nextDouble();
             }
             trips.add(payments);
+
+            student_count = in.nextInt();
         }
 
         /* Process and output data */
-        // For each payments array in the trips ArrayList
-            // Calculate the average payment
-            // Search through the payments array and identify all payments above the average payment
-                // Find the difference between the payment amount and avg payment, and add this difference to exchange
-            // Print the total amount that must be exchanged
+        for (int i = 0; i < trips.size(); i++) {
+            double[] payments = trips.get(i);
+            double avg = calculate_average(payments);
+
+            double exchange = 0;
+            for (int j = 0; j < payments.length; j++) {
+                if (payments[j] > avg) {
+                    exchange += (payments[j] - avg);
+                }
+            }
+            System.out.println("$" + exchange);
+        }
     }
 
     public static double calculate_average(double[] arr) {
-        return 0;
+        double sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum / arr.length;
     }
 }
