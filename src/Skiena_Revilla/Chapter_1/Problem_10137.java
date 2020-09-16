@@ -12,10 +12,11 @@ public class Problem_10137 {
         /* Input data */
         int student_count = in.nextInt();
         while (student_count != 0) {
-            double[] payments;
-            // Get student_count lines of data containing the prices each student paid
-                // Add each line to the payments array
-            // Add the payments array to the trips ArrayList
+            double[] payments = new double[student_count];
+            for (int i = 0; i < student_count; i++) {
+                payments[i] = in.nextDouble();
+            }
+            trips.add(payments);
         }
 
         /* Process and output data */
@@ -24,5 +25,9 @@ public class Problem_10137 {
             // Search through the payments array and identify all payments above the average payment
                 // Find the difference between the payment amount and avg payment, and add this difference to exchange
             // Print the total amount that must be exchanged
+    }
+
+    public static double calculate_average(double[] arr) {
+        return 0;
     }
 }
