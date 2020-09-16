@@ -7,14 +7,16 @@ import java.util.Scanner;
 public class Problem_10137 {
     public static void main(String[] args) {
         Scanner in = new Scanner(new BufferedInputStream(System.in));
-        ArrayList<double[]> trips = new ArrayList(); // Each index holds an array containing the amounts each student paid during the trip
+        ArrayList<int[]> trips = new ArrayList(); // Each index holds an array containing the amounts each student paid (in cents) during the trip
 
         /* Input data */
         int student_count = in.nextInt();
+        in.nextLine();
         while (student_count != 0) {
-            double[] payments = new double[student_count];
+            int[] payments = new int[student_count];
             for (int i = 0; i < student_count; i++) {
-                payments[i] = in.nextDouble();
+                payments[i] = (int) (in.nextDouble() * 100);
+                in.nextLine();
             }
             trips.add(payments);
 
@@ -23,24 +25,25 @@ public class Problem_10137 {
 
         /* Process and output data */
         for (int i = 0; i < trips.size(); i++) {
-            double[] payments = trips.get(i);
-            double avg = calculate_average(payments);
+            int[] payments = trips.get(i);
+            int avg = calculate_average(payments);
 
-            double exchange = 0;
+            int exchange = 0;
             for (int j = 0; j < payments.length; j++) {
                 if (payments[j] > avg) {
                     exchange += (payments[j] - avg);
                 }
             }
-            System.out.println("$" + exchange);
+            double min_exchange = exchange / 100.00;
+            System.out.printf("$%.2f%n", min_exchange);
         }
     }
 
-    public static double calculate_average(double[] arr) {
-        double sum = 0;
+    public static int calculate_average(int[] arr) {
+        int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
-        return sum / arr.length;
+        return (int) Math.round(1.0*sum / arr.length);
     }
 }
