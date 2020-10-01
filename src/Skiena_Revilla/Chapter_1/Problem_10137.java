@@ -15,7 +15,7 @@ public class Problem_10137 {
         while (student_count != 0) {
             int[] payments = new int[student_count];
             for (int i = 0; i < student_count; i++) {
-                payments[i] = (int) (in.nextDouble() * 100);
+                payments[i] = (int) Math.round(in.nextDouble() * 100);
                 in.nextLine();
             }
             trips.add(payments);
@@ -27,11 +27,18 @@ public class Problem_10137 {
         for (int i = 0; i < trips.size(); i++) {
             int[] payments = trips.get(i);
             int avg = calculate_average(payments);
+            int total = calculate_total(payments);
+            int remainder = total % payments.length;
 
             int exchange = 0;
             for (int j = 0; j < payments.length; j++) {
                 if (payments[j] > avg) {
                     exchange += (payments[j] - avg);
+
+                    if (remainder > 0) {
+                        exchange--;
+                        remainder--;
+                    }
                 }
             }
             double min_exchange = exchange / 100.00;
@@ -39,11 +46,19 @@ public class Problem_10137 {
         }
     }
 
+    public static int calculate_total(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum;
+    }
+
     public static int calculate_average(int[] arr) {
         int sum = 0;
         for (int i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
-        return (int) Math.round(1.0*sum / arr.length);
+        return sum / arr.length;
     }
 }
